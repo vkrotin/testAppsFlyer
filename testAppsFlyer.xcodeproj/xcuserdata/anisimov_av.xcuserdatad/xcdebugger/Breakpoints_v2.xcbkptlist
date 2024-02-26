@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C3D4909D-77E5-4E52-9842-5482FB293958"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "682B0DC2-4D5D-4F51-BCAF-ECC4DF92E110"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testAppsFlyer/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "didBecomeActiveNotification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "682B0DC2-4D5D-4F51-BCAF-ECC4DF92E110 - 264e62b27e0cdc81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testAppsFlyer.AppDelegate.setWaitForAtUserAuthorization() -&gt; ()"
+                  moduleName = "testAppsFlyer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anisimov_av/Documents/Develop/testAppsFlyer/testAppsFlyer/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "682B0DC2-4D5D-4F51-BCAF-ECC4DF92E110 - 264e62b27e0cdc81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testAppsFlyer.AppDelegate.setWaitForAtUserAuthorization() -&gt; ()"
+                  moduleName = "testAppsFlyer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anisimov_av/Documents/Develop/testAppsFlyer/testAppsFlyer/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "682B0DC2-4D5D-4F51-BCAF-ECC4DF92E110 - 264e62b27e0cdce2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "testAppsFlyer.AppDelegate.setWaitForAtUserAuthorization() -&gt; ()"
+                  moduleName = "testAppsFlyer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anisimov_av/Documents/Develop/testAppsFlyer/testAppsFlyer/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

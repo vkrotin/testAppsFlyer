@@ -5,32 +5,68 @@
 //  Created by Анисимов Алексей Викторович on 22.02.2024.
 //
 
+import AppsFlyerLib
+import AppTrackingTransparency
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    private var becomeActiveToken: NotificationToken?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        initializeAppsFlyer()
         return true
     }
 
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+}
+
+//MARK: - AppsFlyer Initialize
+extension AppDelegate {
+    private func initializeAppsFlyer() {
+        guard let afPreferences = Bundle.main.afPreferences else {
+            print("[AFSDK] Valid preferences not found, check afdevkey.plist")
+            return
+        }
+    #if DEBUG
+        AppsFlyerLib.shared().isDebug = true
+    #endif
+        AppsFlyerLib.shared().appsFlyerDevKey = afPreferences.devKey
+        AppsFlyerLib.shared().appleAppID = afPreferences.appId
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60) // unrecognized selector !!!
+        AppsFlyerLib.shared().deepLinkDelegate = self
+
+        becomeActiveToken = NotificationCenter.default.observe(
+            name: UIApplication.didBecomeActiveNotification) { [weak self] _ in
+                self?.didBecomeActiveNotification()
+            }
     }
 
+    private func didBecomeActiveNotification() {
+        AppsFlyerLib.shared().start()
+        ATTrackingManager.requestTrackingAuthorization { _ in }
+    }
+}
 
+//MARK: - DeepLinkDelegate
+extension AppDelegate: DeepLinkDelegate {
+    func didResolveDeepLink(_ result: DeepLinkResult) {
+        switch result.status {
+        case .found:
+            print("[AFSDK] Deep link found")
+        case .notFound:
+            print("[AFSDK] Deep link not found")
+        case .failure:
+            print("Error: \(result.error?.localizedDescription ?? "")")
+        }
+    }
 }
 

@@ -16,6 +16,10 @@
 		703064652B8702230033E573 /* testAppsFlyerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703064642B8702230033E573 /* testAppsFlyerTests.swift */; };
 		7030646F2B8702230033E573 /* testAppsFlyerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7030646E2B8702230033E573 /* testAppsFlyerUITests.swift */; };
 		703064712B8702230033E573 /* testAppsFlyerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703064702B8702230033E573 /* testAppsFlyerUITestsLaunchTests.swift */; };
+		7030647F2B8704850033E573 /* AppsFlyerLib-Strict in Frameworks */ = {isa = PBXBuildFile; productRef = 7030647E2B8704850033E573 /* AppsFlyerLib-Strict */; };
+		703064822B87056D0033E573 /* NotificationCenter+NotificationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703064812B87056D0033E573 /* NotificationCenter+NotificationToken.swift */; };
+		703064842B8C63510033E573 /* afdevkey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 703064832B8C63510033E573 /* afdevkey.plist */; };
+		703064862B8C64B50033E573 /* Bundle+appsFlyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703064852B8C64B50033E573 /* Bundle+appsFlyer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		7030646A2B8702230033E573 /* testAppsFlyerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testAppsFlyerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7030646E2B8702230033E573 /* testAppsFlyerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAppsFlyerUITests.swift; sourceTree = "<group>"; };
 		703064702B8702230033E573 /* testAppsFlyerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAppsFlyerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		703064812B87056D0033E573 /* NotificationCenter+NotificationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+NotificationToken.swift"; sourceTree = "<group>"; };
+		703064832B8C63510033E573 /* afdevkey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = afdevkey.plist; sourceTree = "<group>"; };
+		703064852B8C64B50033E573 /* Bundle+appsFlyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+appsFlyer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7030647F2B8704850033E573 /* AppsFlyerLib-Strict in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,7 @@
 		7030644C2B8702210033E573 /* testAppsFlyer */ = {
 			isa = PBXGroup;
 			children = (
+				703064802B87055F0033E573 /* Extensions */,
 				7030644D2B8702210033E573 /* AppDelegate.swift */,
 				7030644F2B8702210033E573 /* SceneDelegate.swift */,
 				703064512B8702210033E573 /* ViewController.swift */,
@@ -106,6 +115,7 @@
 				703064562B8702230033E573 /* Assets.xcassets */,
 				703064582B8702230033E573 /* LaunchScreen.storyboard */,
 				7030645B2B8702230033E573 /* Info.plist */,
+				703064832B8C63510033E573 /* afdevkey.plist */,
 			);
 			path = testAppsFlyer;
 			sourceTree = "<group>";
@@ -127,6 +137,15 @@
 			path = testAppsFlyerUITests;
 			sourceTree = "<group>";
 		};
+		703064802B87055F0033E573 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				703064812B87056D0033E573 /* NotificationCenter+NotificationToken.swift */,
+				703064852B8C64B50033E573 /* Bundle+appsFlyer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +162,9 @@
 			dependencies = (
 			);
 			name = testAppsFlyer;
+			packageProductDependencies = (
+				7030647E2B8704850033E573 /* AppsFlyerLib-Strict */,
+			);
 			productName = testAppsFlyer;
 			productReference = 7030644A2B8702210033E573 /* testAppsFlyer.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 703064412B8702210033E573;
+			packageReferences = (
+				7030647D2B8704850033E573 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Strict" */,
+			);
 			productRefGroup = 7030644B2B8702210033E573 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +259,7 @@
 				7030645A2B8702230033E573 /* LaunchScreen.storyboard in Resources */,
 				703064572B8702230033E573 /* Assets.xcassets in Resources */,
 				703064552B8702210033E573 /* Main.storyboard in Resources */,
+				703064842B8C63510033E573 /* afdevkey.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703064862B8C64B50033E573 /* Bundle+appsFlyer.swift in Sources */,
+				703064822B87056D0033E573 /* NotificationCenter+NotificationToken.swift in Sources */,
 				703064522B8702210033E573 /* ViewController.swift in Sources */,
 				7030644E2B8702210033E573 /* AppDelegate.swift in Sources */,
 				703064502B8702210033E573 /* SceneDelegate.swift in Sources */,
@@ -444,6 +472,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,6 +500,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,6 +626,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7030647D2B8704850033E573 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Strict" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework-Strict/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7030647E2B8704850033E573 /* AppsFlyerLib-Strict */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7030647D2B8704850033E573 /* XCRemoteSwiftPackageReference "AppsFlyerFramework-Strict" */;
+			productName = "AppsFlyerLib-Strict";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 703064422B8702210033E573 /* Project object */;
 }
