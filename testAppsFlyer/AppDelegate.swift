@@ -36,9 +36,8 @@ extension AppDelegate {
             print("[AFSDK] Valid preferences not found, check afdevkey.plist")
             return
         }
-    #if DEBUG
+
         AppsFlyerLib.shared().isDebug = true
-    #endif
         AppsFlyerLib.shared().appsFlyerDevKey = afPreferences.devKey
         AppsFlyerLib.shared().appleAppID = afPreferences.appId
         AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60) // unrecognized selector !!!
