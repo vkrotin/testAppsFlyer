@@ -45,9 +45,10 @@ extension AppDelegate {
         AppsFlyerLib.shared().deepLinkDelegate = self
 
         becomeActiveToken = NotificationCenter.default.observe(
-            name: UIApplication.didBecomeActiveNotification) { [weak self] _ in
-                self?.didBecomeActiveNotification()
-            }
+            name: UIApplication.didBecomeActiveNotification
+        ) { [weak self] _ in
+            self?.didBecomeActiveNotification()
+        }
     }
 
     private func didBecomeActiveNotification() {
